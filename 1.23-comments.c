@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include   <stdio.h>
 #define MAXLINE 1000
-#define IN 1
-#define OUT 0
+#define IN         1
+#define OUT        0
 
 void rmcomments(char line[], int len);
 int readline(char line[], int maxlen);

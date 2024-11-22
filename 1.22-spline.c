@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include   <stdio.h>
 #define MAXLINE 1000
-#define LIMIT 5
+#define LIMIT      5
 
 int readline(char line[], int maxlen);
 

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define tablen 8 
+#define tablen   8 
 
 int main()
 {

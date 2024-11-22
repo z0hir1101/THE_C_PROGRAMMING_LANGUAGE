@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <string.h>
-
+#include   <stdio.h>
+#include  <string.h>
 #define MAXSIZE 1000
 
 int isbrackets (char array[]);
