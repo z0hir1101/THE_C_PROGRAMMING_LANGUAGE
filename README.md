@@ -1,7 +1,7 @@
 # THE_C_PROGRAMMING_LANGUAGE
 my solutions of exercises in the book "THE C PROGRAMMING LANGUAGE"
 - -------------------------------------
-- 1.16
+- 1.16 [https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/1.16-readlines.c]
 - 1.20
 - 1.21
 - 1.22
