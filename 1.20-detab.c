@@ -6,7 +6,7 @@ int main()
   int colmn, c, i;
 
   colmn = tablen;
-  while ((c = getchar()) != '@') {
+  while ((c = getchar()) != EOF) {
     if (c != '\t') {
       putchar(c);
       if (c == '\n') colmn = tablen;
