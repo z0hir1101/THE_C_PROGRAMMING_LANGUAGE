@@ -28,33 +28,35 @@ int main()
 
 int isbrackets (char s[])
 {
-   int i, j, cntr;
-   cntr = 0;
+   int i, j, isclose, cntrOP, cntrCL;
+   cntrOP = cntrCL = 0;
 
    for (i = 0; i < strlen(s); ++i) {
-      cntr = 0;
-      if (s[i]!='[' && s[i]!='{' && s[i]!='(') {
-         for (j = i+1; j < strlen(s); ++j) {
-            if (s[i]=='(' && s[j]-s[i] == 1)
-               ++cntr;
-            else if (s[j] - s[i] == 2)
-               ++cntr;
-         }
-         if (cntr <= 0) return 1;
+      isclose = 0;
+      if (s[i]=='[' || s[i]=='{' || s[i]=='(') {
+         for (j = i+1; j < strlen(s); ++j)
+            if ((s[i]=='(' && s[j]-s[i] == 1) || 
+                (s[i]!='(' && s[j]-s[i] == 2)) { 
+               isclose = 1;
+               break;
+            } 
+         if (!isclose) return 1;
+      } else if (s[i]==']' || s[i]=='}' || s[i]==')') {
+         for (j = 0; j < i; ++j)
+            if ((s[i]==')' && s[i]-s[j] == 1) || 
+                (s[i]!=')' && s[i]-s[j] == 2)) { 
+               isclose = 1;
+               break;
+            } 
+         if (!isclose) return 1;
       }
-      if (s[i]!=']' && s[i]!='}' && s[i]!=')') {
-         for (j = 0; j < i; ++j) {
-            if (s[i]=='(' && s[i]-s[j] == 1)
-               ++cntr;
-            else if (s[i] - s[j] == 2)
-               ++cntr;
-         }
-         if (cntr <= 0) return 1;
-      }
-      return 0;
    }
 
-   return 0;
+   for (i = 0; i < strlen(s); ++i) 
+      if (s[i]=='[' || s[i]=='{' || s[i]=='(') cntrOP++;
+      else if (s[i]==']' || s[i]=='}' || s[i]==')') cntrCL++; 
+   
+   return (cntrOP == cntrCL) ? 0 : 1;
 }
 
 int iscomments(char s[])
@@ -66,8 +68,7 @@ int iscomments(char s[])
       if (s[i-1] != '/' || s[i] != '*')
          continue;
       for (j = i; j < strlen(s); ++j) 
-         if (s[j] == '/' && s[j-1] == '*')
-            ++cntr;
+         if (s[j] == '/' && s[j-1] == '*') ++cntr;
       if (cntr <= 0) return 1;
    }
    return 0;
@@ -82,8 +83,7 @@ int ismarks(char s[])
       if (s[i] != '"' && s[i] != 39)
          continue;
       for (j = i+1; j < strlen(s); ++j) 
-         if (s[j] == s[i])
-            ++cntr;
+         if (s[j] == s[i]) ++cntr;
       if (cntr <= 0) return 1;
    }
    return 0;
