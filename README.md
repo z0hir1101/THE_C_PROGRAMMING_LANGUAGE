@@ -12,3 +12,4 @@
 - [5.2](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/blob/master/5.2-getfloat.c)
 - [5.3-5.4](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/blob/master/5.3_5.4-string.c)
 - [5.5](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/blob/master/5.5-pointers.c)
+- [5.6](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/blob/master/5.6-pointers.c)

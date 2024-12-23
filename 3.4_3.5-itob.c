@@ -14,7 +14,7 @@ int main()
    return 0;
 }
 
-void itob(int nt, char[] s, int bt)
+void itob(int nt, char s[], int bt)
 {
    int i = 0;
    long sign, n, b;
@@ -23,7 +23,6 @@ void itob(int nt, char[] s, int bt)
    
    if ((sign = n) < 0) 
       n = -n;
-   sign = n;
 
    do {
       s[i++] = (n%b < 10) ? n%b+'0' : (n%b%10)+'A';
@@ -35,7 +34,7 @@ void itob(int nt, char[] s, int bt)
    reverse(s);
 }
 
-void reverse(char[] s)
+void reverse(char s[])
 {
    int c, i, j;
 
