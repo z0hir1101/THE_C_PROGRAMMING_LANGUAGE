@@ -13,6 +13,7 @@ int main()
    char s[] = "hy are you norm?";
    char t[] = "norm";
    printf("%d\n", strindex(s, t));
+   return 0;
 }
 
 int readline(char *s, int lim)

@@ -10,6 +10,7 @@ int main()
    char t[20] = "yes";
 
    printf("%d\n", send(s, t, 2));
+   return 0;
 }
 
 void scat(char *s, char *t, int n)
