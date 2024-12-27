@@ -7,11 +7,11 @@
 int readlines(char *lineptr[], int ml)
 {
    int ln, nlines, rdline(char *, int);
-   char *p, line[MAXLEN];
+   char *p, line[MAXLEN], buf[MAXLEN * ml];
 
    nlines = 0;
-   while ((ln = rdline(line, MAXLEN)) > 1)
-      if (nlines >= ml || (p = malloc(ln)) == NULL)
+   for (p = buf; (ln = rdline(line, MAXLEN)) > 1; p+=ln)
+      if (nlines >= ml)
         return -1;
       else {
          line[ln-1] = '\0';
