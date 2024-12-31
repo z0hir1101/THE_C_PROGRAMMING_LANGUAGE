@@ -14,3 +14,4 @@
 - [5.5-pointers](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/blob/master/5.5-pointers.c)
 - [5.6-pointers](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/blob/master/5.6-pointers.c)
 - [5.7-sort](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/5.7-sort)
+- [5.8-arrays](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/5.8-arrays.c)
