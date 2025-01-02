@@ -16,7 +16,7 @@ int main()
    double op1, op2;
    char s[MAXOP];
 
-   while ((type = getop(s)) != '=') {
+   while ((type = getop(s)) != '=')
       switch (type) {
          case NUMBER:
             push(atof(s));
@@ -65,8 +65,9 @@ int main()
             printf("\t%.8g\n", pop());
             clstack();
             break;
+         default:
+            printf("WRONG INPUT\n");
+            break;
       }
-   }
-
    return 0;
 }

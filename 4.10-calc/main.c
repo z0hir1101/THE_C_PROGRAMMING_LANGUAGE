@@ -18,7 +18,7 @@ int main()
    char s[MAXOP], line[MAXLINE];
    readline(line, MAXLINE);
 
-   while ((type = getop(s, line)) != '=') {
+   while ((type = getop(s, line)) != '=') 
       switch (type) {
          case NUMBER:
             push(atof(s));
@@ -46,11 +46,9 @@ int main()
             p = 0;
             break;
          default:
-            printf("WRONG INPUT");
+            printf("WRONG INPUT\n");
             break;
       }
-   }
-
    return 0;
 }
 
