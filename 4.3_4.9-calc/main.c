@@ -16,7 +16,7 @@ int main()
    double op1, op2;
    char s[MAXOP];
 
-   while ((type = getop(s)) != '=')
+   while ((type = getop(s)) != EOF)
       switch (type) {
          case NUMBER:
             push(atof(s));

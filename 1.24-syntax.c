@@ -12,7 +12,7 @@ int main()
    int len, c;
    
    len = 0;
-   while ((c = getchar()) != EOF && c != '~') {
+   while ((c = getchar()) != EOF) {
       array[len] = c;
       ++len; 
    }

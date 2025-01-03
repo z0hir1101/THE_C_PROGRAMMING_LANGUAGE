@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define TAB      8 
 
-int main()
+int main(int argc, char *argv[])
 {
   int colmn, c, i;
 
@@ -22,4 +22,5 @@ int main()
   } 
   return 0;
 }
+
 

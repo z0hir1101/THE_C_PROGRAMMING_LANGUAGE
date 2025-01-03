@@ -18,7 +18,7 @@ int main()
    char s[MAXOP], line[MAXLINE];
    readline(line, MAXLINE);
 
-   while ((type = getop(s, line)) != '=') 
+   while ((type = getop(s, line)) != EOF) 
       switch (type) {
          case NUMBER:
             push(atof(s));
