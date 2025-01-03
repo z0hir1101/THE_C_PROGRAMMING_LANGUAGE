@@ -16,3 +16,4 @@
 - [5.7-sort](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/5.7-sort)
 - [5.8-arrays](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/5.8-arrays.c)
 - [5.9-arrays](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/5.9-arrays.c)
+- [5.10-expr](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/5.10-expr.c)
