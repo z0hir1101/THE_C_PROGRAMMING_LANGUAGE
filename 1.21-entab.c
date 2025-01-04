@@ -1,6 +1,6 @@
 #include   <stdio.h>
 #define MAXLINE 1000
-#define TAB        8
+#define TAB 8
 
 int readline(char line[], int maxlen);
 

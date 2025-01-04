@@ -1,13 +1,26 @@
 #include   <stdio.h>
+#include   <ctype.h>
+#include  <stdlib.h>
+#include    <math.h>
+
 #define MAXLINE 1000
-#define TAB        8
+#define TAB 8
 
 int readline(char line[], int maxlen);
 
-int main()
+int main(int argc, char *argv[])
 {
-  int len;
+  int len, n, m;
   char line[MAXLINE];
+  m = 5;
+  n = 0;
+
+  while (--argc > 0)
+    if (isdigit((*++argv)[1]) && **argv == '-') 
+      m = fabs(atoi(*argv));
+    else if (isdigit((*argv)[1]) && **argv == '+')
+      n = atoi(*argv);
+    else printf("find: illegal option %s\n", *argv);
 
   while ((len = readline(line, MAXLINE)) > 1) {
     --len; 
@@ -21,6 +34,7 @@ int main()
     }
     putchar('\n');
   }
+
   return 0;
 }
 

@@ -7,18 +7,18 @@ static double val[MAXVAL];
 
 void push(double f)
 {
-   if (sp < MAXVAL)
-      val[sp++] = f;
-   else
-      printf("push: stack full, cant push\n");
+  if (sp < MAXVAL)
+    val[sp++] = f;
+  else
+    printf("push: stack full, cant push\n");
 }
 
 double pop(void)
 {
-   if (sp > 0)
-      return val[--sp];
-   else {
-      printf("pop: stack is empty. cant get\n");
-      return 0.0;
-   }
+  if (sp > 0)
+    return val[--sp];
+  else {
+    printf("pop: stack is empty. cant get\n");
+    return 0.0;
+  }
 }

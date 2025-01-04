@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define TAB      8 
+#define TAB 8 
 
 int main()
 {

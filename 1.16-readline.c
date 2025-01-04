@@ -9,7 +9,7 @@ int main()
   int len, max, isbigger, c;
   char line[MAXLINE];
   char longest[MAXLINE];
-  
+
   max = 0;
   while ((len = readline(line, MAXLINE)) > 1) {
     isbigger = 0; 
@@ -51,7 +51,7 @@ int readline(char s[], int lim)
 void copy(char to[], char from[])
 {
   int i;
-  
+
   i = 0;
   while((to[i] = from[i]) != '\0')
     ++i;

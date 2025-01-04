@@ -7,18 +7,18 @@ static int bufp = 0;
 
 int getch()
 {
-   return (bufp > 0) ? buf[--bufp] : getchar();
+  return (bufp > 0) ? buf[--bufp] : getchar();
 }
 
 void ungetch(int c)
 {
-   if (bufp > BUFSIZE)
-      printf("ungetch: so many characters");
-   else { 
-      int i;
-      for (i = bufp++; i > 0; --i)
-         buf[i] = buf[i-1];
-      buf[0] = c;
-   }
+  if (bufp > BUFSIZE)
+    printf("ungetch: so many characters");
+  else { 
+    int i;
+    for (i = bufp++; i > 0; --i)
+      buf[i] = buf[i-1];
+    buf[0] = c;
+  }
 }
 

@@ -1,36 +1,25 @@
 #include  <stdio.h>
-#include  <ctype.h>
 #include <stdlib.h>
-#include   <math.h>
-#define TAB      8 
+
+#define MAXLEN 1000
+#define TAB 8 
 
 int main(int argc, char *argv[])
 {
-   int colmn, c, m, n;
-   m = 5;
-   n = 0;
+  int colmn, pos_array[MAXLEN], i, j, l;
+  colmn = 0;
 
-   while (--argc > 0)
-      if (isdigit((*++argv)[1]) && **argv == '-') 
-         m = fabs(atoi(*argv));
-      else if (isdigit((*++argv)[1]) && **argv == '+')
-         n = atoi(*argv);
-      else printf("find: illegal option %s\n", *argv);
+  for (i = 0; --argc > 0 && i < MAXLEN; ++i)
+    if (!isdigit(**++argv)) 
+      pos_array[i] = atoi(*argv);
+    else 
+      printf("find: illegal option %s\n", *argv);
 
-   colmn = TAB;
-   while ((c = getchar()) != EOF)
-      if (c != '\t') {
-         putchar(c);
-         if (c == '\n') colmn = TAB;
-         else if (colmn == 0) colmn = TAB - 1;
-         else --colmn;
-      }
-      else {
-         if (colmn == 0) colmn = 8;
-         for (int i = 0; i < colmn; ++i) 
-            putchar('-');
-         colmn = TAB;
-      }
-   return 0;
+  for (j = 0; j < i; j++) {
+    for (l = 0; l < pos_array[j] - colmn; ++l, ++colmn)
+      putchar(' ');
+    for (l = 0; l < TAB-pos_array[j]%TAB; ++l, ++colmn)
+      putchar('-');
+  }
+  return 0;
 }
-
