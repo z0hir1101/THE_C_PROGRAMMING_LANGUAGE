@@ -6,7 +6,7 @@ int main()
   int colmn, c, i;
 
   colmn = TAB;
-  while ((c = getchar()) != EOF) {
+  while ((c = getchar()) != EOF)
     if (c != '\t') {
       putchar(c);
       if (c == '\n') colmn = TAB;
@@ -19,7 +19,6 @@ int main()
         putchar('-');
       colmn = TAB;
     }
-  } 
   return 0;
 }
 
