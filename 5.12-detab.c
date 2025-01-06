@@ -6,8 +6,8 @@
 int main(int argc, char *argv[])
 {
   int colmn, c, m, n;
-  m = 5;
-  n = 0;
+  m = 0;
+  n = 8;
 
   while (--argc > 0)
     if (isdigit((*++argv)[1]) && **argv == '-') 

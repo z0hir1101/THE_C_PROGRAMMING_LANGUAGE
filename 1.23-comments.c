@@ -12,7 +12,7 @@ int main()
   int len, i;
   char line[MAXLINE];
 
-  while ((len = readline(line, MAXLINE)) > 1) {
+  while ((len = readline(line, MAXLINE)) > 0) {
     rmcomments(line, len);
     for (i = 0; i < len; ++i) 
       if (line[i] != '\0')

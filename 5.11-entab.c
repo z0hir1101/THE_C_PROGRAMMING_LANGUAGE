@@ -1,39 +1,50 @@
-#include   <stdio.h>
-#define MAXLINE 1000
-#define TAB        8
+#include  <stdio.h>
+#include <stdlib.h>
+#include  <ctype.h>
+#define MAXLINE 100
+#define MAXARG 1000
+#define TAB 8
 
-int readline(char line[], int maxlen);
-
-int main()
+int main(int argc, char *argv[])
 {
-  int len;
+  int tab_stop[MAXARG] = { 8, 16, 24, 32, 40, 48 };
+  int readline(char *, int), *p, ln, i;
   char line[MAXLINE];
+  p = tab_stop;
 
-  while ((len = readline(line, MAXLINE)) > 1) {
-    --len; 
-    while (len >= TAB) {
-      len -= TAB;
-      putchar('\t');
+  while (--argc > 0 && p != NULL)
+    if (!isdigit(**++argv)) 
+      printf("find: illegal option %s\n", *argv);
+    else 
+      *p++ = atoi(*argv);
+
+  p = tab_stop;
+  while ((ln = readline(line, MAXLINE) - 1) > 0) {
+    if (*p > ln) {
+      while (ln-- > 0)
+        putchar('_');
+      putchar('\n');
+      p = tab_stop;
+      continue;
     }
-    while (len > 0) {
-      len -= 1;
-      putchar('#');
-    }
+    for (; p+1 != NULL && *(p+1) < ln; p++)
+      ; 
+    for (i = 0; i < *p; ++i)
+      putchar('*');
+    for (; i < ln; ++i)
+      putchar('_'); 
     putchar('\n');
+    p = tab_stop;
   }
   return 0;
 }
 
-int readline(char s[], int max)
+int readline(char *s, int lim)
 {
-  int c, i;
+  char *fch = s;
 
-  for (i = 0; i<max-1 && (c=getchar())!=EOF && c!='\n'; ++i)
-    s[i] = c;
-  if (c == '\n') {
-    s[i] = '\n';
-    ++i;
-  }
-  s[i] = '\0';
-  return i;
+  while (--lim>0 && (*s=getchar())!=EOF && *s++!='\n')
+    ;
+  *s = '\0'; 
+  return s-fch;
 }

@@ -10,7 +10,7 @@ int main()
   char line[MAXLINE];
   int len, cntr, i;
 
-  while ((len = readline(line, MAXLINE)) > 1) {
+  while ((len = readline(line, MAXLINE)) > 0) {
     cntr = 1;
     for (i = 0; i < len; ++i) {
       putchar(line[i]);

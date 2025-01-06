@@ -1,11 +1,12 @@
 #include  <stdio.h>
 #include  <ctype.h>
 #include <stdlib.h>
-#define MAXLEN 1000
+#define MAXARGS 100
 
 int main(int argc, char *argv[])
 {
-  int colmn, tab_stop[MAXLEN], *p, i, c;
+  int tab_stop[MAXARGS] = { 8, 16, 24, 32, 40, 48 };
+  int colmn, *p, i, c;
   p = tab_stop;
   colmn = 1;
 
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
   p = tab_stop;
   while ((c = getchar()) != EOF)
     if (c == '\t') {
-      for (; *p < colmn && p != NULL; p++)
+      for (; p != NULL && *p < colmn; p++)
         ;
       for (i = 0; i <= *p - colmn; ++i)
         putchar('#');
