@@ -1,11 +1,10 @@
 #include  <stdio.h>
 #include  <ctype.h>
 #include <stdlib.h>
-#define TAB 8 
 
 int main(int argc, char *argv[])
 {
-  int colmn, c, m, n;
+  int colmn, i, c, m, n;
   m = 0;
   n = 8;
 
@@ -16,20 +15,20 @@ int main(int argc, char *argv[])
       n = atoi(*argv);
     else printf("find: illegal option %s\n", *argv);
 
-  colmn = TAB;
-  while ((c = getchar()) != EOF)
+  colmn = 0;
+  while ((c = getchar()) != EOF) {
     if (c != '\t') {
+      colmn -= (c == '\n') ? colmn : -1;
       putchar(c);
-      if (c == '\n') colmn = TAB;
-      else if (colmn == 0) colmn = TAB - 1;
-      else --colmn;
+      continue;
     }
-    else {
-      if (colmn == 0) colmn = 8;
-      for (int i = 0; i < colmn; ++i) 
+    if (colmn < m) 
+      for (i = 0; i < m; ++i) 
         putchar('-');
-      colmn = TAB;
-    }
+    else
+      for (i = 0; i < n - (colmn - m) % n; ++i)
+        putchar('-');
+  }
   return 0;
 }
 

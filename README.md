@@ -19,3 +19,5 @@
 - [5.10-expr](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/chapter.5/5.10-expr.c)
 - [5.11-detab](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/chapter.5/5.11-detab.c)
 - [5.11-entab](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/chapter.5/5.11-entab.c)
+- [5.12-detab](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/chapter.5/5.12-detab.c)
+- [5.12-entab](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/chapter.5/5.12-entab.c)

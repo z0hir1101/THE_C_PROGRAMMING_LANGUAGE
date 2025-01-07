@@ -3,7 +3,6 @@
 #include  <ctype.h>
 #define MAXLINE 100
 #define MAXARG 1000
-#define TAB 8
 
 int main(int argc, char *argv[])
 {
@@ -19,20 +18,19 @@ int main(int argc, char *argv[])
       *p++ = atoi(*argv);
 
   p = tab_stop;
-  while ((ln = readline(line, MAXLINE) - 1) > 0) {
-    if (*p > ln) {
+  while ((ln = readline(line, MAXLINE)) > 0) {
+    ln--;
+    if (*p > ln)
       while (ln-- > 0)
-        putchar('_');
-      putchar('\n');
-      p = tab_stop;
-      continue;
+        putchar('#');
+    else {
+      for (; p+1 != NULL && *(p+1) < ln; p++)
+        ; 
+      for (i = 0; i < *p; ++i)
+        putchar('-');
+      for (; i < ln; ++i)
+        putchar('#'); 
     }
-    for (; p+1 != NULL && *(p+1) < ln; p++)
-      ; 
-    for (i = 0; i < *p; ++i)
-      putchar('*');
-    for (; i < ln; ++i)
-      putchar('_'); 
     putchar('\n');
     p = tab_stop;
   }

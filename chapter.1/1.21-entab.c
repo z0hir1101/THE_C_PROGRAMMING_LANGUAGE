@@ -9,7 +9,8 @@ int main()
   int len;
   char line[MAXLINE];
 
-  while ((len = readline(line, MAXLINE) - 1) > 0) {
+  while ((len = readline(line, MAXLINE)) > 0) {
+    len--;
     while (len >= TAB) {
       len -= TAB;
       putchar('\t');
