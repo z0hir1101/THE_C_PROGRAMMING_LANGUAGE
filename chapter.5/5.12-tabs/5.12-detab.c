@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
   m = 0;
   n = 8;
 
-  while (--argc > 0)
-    if (isdigit((*++argv)[1]) && **argv == '-') 
+  while (--argc>0 && (**++argv=='-' || **argv=='+'))
+    if (isdigit((*argv)[1]) && **argv == '-') 
       m = abs(atoi(*argv));
     else if (isdigit((*argv)[1]) && **argv == '+')
       n = atoi(*argv);

@@ -21,3 +21,4 @@
 - [5.11-entab](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/chapter.5/5.11-entab.c)
 - [5.12-detab](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/chapter.5/5.12-detab.c)
 - [5.12-entab](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/chapter.5/5.12-entab.c)
+- [5.13-tail](https://github.com/z0hir1101/THE_C_PROGRAMMING_LANGUAGE/tree/master/chapter.5/5.13-tail.c)
