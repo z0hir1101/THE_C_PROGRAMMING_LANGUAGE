@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
   p = tab_stop;
   while ((c = getchar()) != EOF)
     if (c == '\t') {
-      for (; p != NULL && *p < colmn; p++)
+      for (; p-tab_stop < MAXARGS && *p < colmn; p++)
         ;
       for (i = 0; i <= *p - colmn; ++i)
         putchar('#');

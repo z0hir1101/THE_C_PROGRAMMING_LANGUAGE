@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
       while (ln-- > 0)
         putchar('#');
     else {
-      for (; p+1 != NULL && *(p+1) < ln; p++)
+      for (; p+1 - tab_stop != NULL && *(p+1) < ln; p++)
         ; 
       for (i = 0; i < *p; ++i)
         putchar('-');
