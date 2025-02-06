@@ -5,7 +5,6 @@ unsigned getbits(unsigned x, int p, int n);
 unsigned setbits(unsigned x, int p, int n, unsigned y);
 unsigned invertbits(unsigned x, int p, int n);
 unsigned rightrot(unsigned x, int n);
-unsigned bitcount(unsigned x);
 
 int main()
 {
@@ -42,15 +41,4 @@ unsigned rightrot(unsigned x, int n)
   --p;
   integer = getbits(x, p, p-n+1);
   return setbits(integer, p, p-n+1, x);
-}
-
-int bitcount(unsigned x)
-{
-  int cntr = 0;
-
-  while (x != 0) {
-    cntr += 1;
-    x &= x-1;
-  }
-  return cntr;
 }
